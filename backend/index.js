@@ -6,14 +6,14 @@ import cors from "cors";
 
 const app = express();
 app.use(express.json());
-// app.use(cors());
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "PUT", "DELETE", "POST"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
+app.use(cors());
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000",
+//     methods: ["GET", "PUT", "DELETE", "POST"],
+//     allowedHeaders: ["Content-Type"],
+//   })
+// );
 app.get("/", (request, response) => {
   return response.status(234).send("Welcome to this bookstore.");
 });
